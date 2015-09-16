@@ -1,0 +1,49 @@
+<form method="post" action="${prepath}/wiki/${page}">
+	<table class="login" width="100%">
+		<tbody>
+			<tr>
+				<td>Character</td>
+				<td>
+					{isset $use_sheet_characters}
+						<select name="character" style="width: 150px;">
+							<option value="">-</option>
+						{foreach name=char item=c from=$use_sheet_characters}
+							<option value="${char}">${char}</option>
+						{/foreach}
+						</select><br />
+					{/isset}
+					{isset $allow_any_character}
+						<input type="text" name="name" value="${name}" style="width: 150px;" />
+					{/isset}
+				</td>
+				<td><input type="radio" name="type" value="10" checked="checked" /> Reroll 10s</td>
+			</tr>
+			<tr>
+				<td>Action</td>
+				<td><input type="text" name="action" value="${action}" style="width: 150px;" /></td>
+				<td><input type="radio" name="type" value="9" /> Reroll 9s</td>
+			</tr>
+			<tr>
+				<td>Dice Pool (number of dice)</td>
+				<td><input type="text" name="number" value="${number}" style="width: 150px;" /></td>
+				<td><input type="radio" name="type" value="8" /> Reroll 8s</td>
+			</tr>
+			<tr>
+				<td>Substract 1s</td>
+				<td><input type="checkbox" name="substract" value="1"></td>
+				<td><input type="radio" name="type" value="0" /> No Rerolls</td>
+			</tr>
+			{isset $variable_difficulty}
+				<tr>
+					<td>Difficulty</td>
+					<td><input type="text" size="2" name="difficulty" value="${difficulty}"></td>
+					<td></td>
+				</tr>
+			{/isset}
+		</tbody>
+		<tfoot>
+			<tr><td colspan="3"><input type="submit" value="Roll" /></td></tr>
+		</tfoot>
+	</table>
+</form>
+<br /><br />
