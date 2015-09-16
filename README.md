@@ -12,7 +12,7 @@ In your `wiki.ini` file (usually in spellbook/Wiki/conf) add:
 ```
 [potions]
 ...
-Sheetgen_WikiDiceRoller
+Sheetgen_WikiDiceRoller = On
 ```
 
 Now, the database needs to be updated with the Diceroller tables. You can see the SQL output by surfing to http://yourvoodooinstance/setup/Controller/Wiki
